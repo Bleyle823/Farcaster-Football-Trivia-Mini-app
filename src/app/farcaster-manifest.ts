@@ -20,9 +20,9 @@ export const farcasterManifest: Manifest = {
     version: "1",
     name: "Football Trivia",
     homeUrl: `${appUrl}/farcaster`,
-    iconUrl: `${appUrl}/football-icon-512.png`,
+    iconUrl: `${appUrl}/football-icon-1024x1024.png`,
     // Add this file in public/ if you want a splash animation
-    splashImageUrl: `${appUrl}/splash-football.gif`,
+    splashImageUrl: `${appUrl}/splash-image-200x200.png`,
     splashBackgroundColor: "#0B1320",
     // webhookUrl: "https://api.example.com/webhook/farcaster",
     subtitle: "Test your football knowledge",
