@@ -1,28 +1,20 @@
 {
-   "accountAssociation": {
-    "header": "eyJmaWQiOjY3NDc5MiwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDdENjI4NDE4NjEyNzU0OWUxODgzRjMwMUM0MjU5MTBGMzYxOUUyNTQifQ",
-    "payload": "eyJkb21haW4iOiJmb290eS10cml2aWEtbWluaWFwcC52ZXJjZWwuYXBwIn0",
-    "signature": "MHhiOGQ2ZDEzZDIyNmEwNTg2YWExYmVmYzY5YzU0MDQxOGI0ODBiZDEwODBlMzU2ZGYyOGY4NDc5MGZhYmRmODYwMDlkZWJhNWM3YWFhNThlZDNhNTgxYzAxNTRiZjUzNjUxZGNjZjQwNDNlZmU3NGNkMjJhMzYyOTlmYTNhNDcyMDFj"
-  },
   "frame": {
-    "version": "1",
     "name": "Football Trivia",
-    "homeUrl": "https://farcaster-football-trivia-mini-app.vercel.app",
-    "iconUrl": "https://farcaster-football-trivia-mini-app.vercel.app/icon.png",
-    "splashImageUrl": "https://farcaster-football-trivia-mini-app.vercel.app/splash.png",
+    "version": "1",
+    "iconUrl": "https://farcaster-football-trivia-mini-app-beta.vercel.app/icon.png",
+    "homeUrl": "https://farcaster-football-trivia-mini-app-beta.vercel.app",
+    "imageUrl": "https://farcaster-football-trivia-mini-app-beta.vercel.app/image.png",
+    "splashImageUrl": "https://farcaster-football-trivia-mini-app-beta.vercel.app/splash.png",
     "splashBackgroundColor": "#0B1320",
+    "webhookUrl": "https://farcaster-football-trivia-mini-app-beta.vercel.app/api/webhook",
     "subtitle": "Test your football knowledge",
-    "description": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends",
-    "screenshotUrls": [
-      "/screenshots/ft-home.png",
-      "/screenshots/ft-question.png",
-      "/screenshots/ft-results.png"
-    ],
-    "primaryCategory": "games",
-    "webhookUrl": "https://farcaster-football-trivia-mini-app.vercel.app/api/webhook",
-    "imageUrl": "https://farcaster-football-trivia-mini-app.vercel.app/image.png"
+    "description": "    \"description\": \"Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends\",",
+    "primaryCategory": "games"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjY3NDc5MiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDYyRTdhOGRCYjhEODUzOGUxY0RiNUQ4OTMwMzBCYjE2ZUEwMEIyRjIifQ",
+    "payload": "eyJkb21haW4iOiJmYXJjYXN0ZXItZm9vdGJhbGwtdHJpdmlhLW1pbmktYXBwLWJldGEudmVyY2VsLmFwcCJ9",
+    "signature": "qA4iZMK2tqPGlwyY7JNKDBL0Wc+XqZjd6GfVprVCuTVAa48xs8QC3S193orsvLmmRp30sJLNElU6bslcP3cUTxs="
   }
-}
-
-
 
