@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "@farcaster/frame-sdk": "^0.0.60",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-progress": "^1.1.7",
+    "@radix-ui/react-switch": "^1.2.5",
     "@t3-oss/env-nextjs": "^0.13.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
