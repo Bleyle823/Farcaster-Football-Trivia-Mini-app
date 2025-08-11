@@ -15,7 +15,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/football-icon-1024x1024.png",
         sizes: "1024x1024",
         type: "image/png",
-        purpose: "any maskable",
+        purpose: "maskable",
       },
     ],
   };
