@@ -1,0 +1,32 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI5MjE5NCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDcyNTU0QTIyNEI0Qjc1Njk2OTdBYWQ1ZUE1YmQ1NzM5ZDAxQzliYzMifQ",
+    "payload": "eyJkb21haW4iOiJ0ZW1wbGF0ZS5nYWlhcy54eXoifQ",
+    "signature": "MHg0N2YwYzJlZDQ3ZTMwODZiMGVmYjk3ZmQwYWM5NGQxZjk3Mjg4NDg0NTc3MjY4Yjg4Yzk4MjAyODlmMTI4MjkzMGZiNmExYTdhN2IxYWJlMmQxMzNjMDE1YTQ0Y2FkNWU5M2NiNmRiNmZhYzFjNDcyNjI5NDAwZTk5YmExODNiNjFi"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Football Trivia",
+    "homeUrl": "https://template.gaias.xyz/farcaster",
+    "iconUrl": "https://template.gaias.xyz/icon-512x512.png",
+    "splashImageUrl": "https://template.gaias.xyz/splash-football.gif",
+    "splashBackgroundColor": "#0B1320",
+    "subtitle": "Test your football knowledge",
+    "description": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends.",
+    "screenshotUrls": [
+      "https://template.gaias.xyz/screenshots/ft-home.png",
+      "https://template.gaias.xyz/screenshots/ft-question.png",
+      "https://template.gaias.xyz/screenshots/ft-results.png"
+    ],
+    "primaryCategory": "games",
+    "tags": ["football", "soccer", "trivia", "sports"],
+    "heroImageUrl": "https://template.gaias.xyz/hero-football.jpg",
+    "tagline": "Score points with every correct answer",
+    "ogTitle": "Football Trivia",
+    "ogDescription": "Fast, fun football trivia. How high can you score?",
+    "ogImageUrl": "https://template.gaias.xyz/og-football.png",
+    "noindex": false
+  }
+}
+
+
