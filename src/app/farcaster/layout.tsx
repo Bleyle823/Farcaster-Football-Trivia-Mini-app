@@ -1,4 +1,5 @@
 import { FarcasterProviders } from "@/app/farcaster/providers";
+import { ReadyOnMount } from "@/app/farcaster/components/ready-on-mount";
 import { getBaseUrl } from "@/lib/constants";
 import "@/styles/globals.css";
 
@@ -69,7 +70,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="overscroll-none">
-        <FarcasterProviders>{children}</FarcasterProviders>
+        <FarcasterProviders>
+          <ReadyOnMount />
+          {children}
+        </FarcasterProviders>
       </body>
     </html>
   );
