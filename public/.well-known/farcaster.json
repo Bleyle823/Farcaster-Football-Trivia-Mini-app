@@ -1,32 +1,25 @@
 {
-  "accountAssociation": {
-    "header": "eyJmaWQiOjI5MjE5NCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDcyNTU0QTIyNEI0Qjc1Njk2OTdBYWQ1ZUE1YmQ1NzM5ZDAxQzliYzMifQ",
-    "payload": "eyJkb21haW4iOiJ0ZW1wbGF0ZS5nYWlhcy54eXoifQ",
-    "signature": "MHg0N2YwYzJlZDQ3ZTMwODZiMGVmYjk3ZmQwYWM5NGQxZjk3Mjg4NDg0NTc3MjY4Yjg4Yzk4MjAyODlmMTI4MjkzMGZiNmExYTdhN2IxYWJlMmQxMzNjMDE1YTQ0Y2FkNWU5M2NiNmRiNmZhYzFjNDcyNjI5NDAwZTk5YmExODNiNjFi"
-  },
   "frame": {
-    "version": "1",
     "name": "Football Trivia",
-    "homeUrl": "/farcaster",
-    "iconUrl": "/football-icon-1024x1024.png",
-    "splashImageUrl": "/splash-image-200x200.png",
+    "version": "1",
+    "iconUrl": "https://imgur.com/a/wxnX9OI",
+    "homeUrl": "https://farcaster-football-trivia-mini-app.vercel.app",
+    "imageUrl": "https://imgur.com/2lRIdDD",
+    "splashImageUrl": "https://imgur.com/2lRIdDD",
     "splashBackgroundColor": "#0B1320",
-    "subtitle": "Test your football knowledge",
-    "description": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends.",
+    "webhookUrl": "https://farcaster-football-trivia-mini-app.vercel.app/api/webhook",
     "screenshotUrls": [
-      "/screenshots/ft-home.png",
-      "/screenshots/ft-question.png",
-      "/screenshots/ft-results.png"
+      "https://imgur.com/0Gj6aeB"
     ],
-    "primaryCategory": "games",
-    "tags": ["football", "soccer", "trivia", "sports"],
-    "heroImageUrl": "/football-hero-1200x630.jpg",
-    "tagline": "Score points with every correct answer",
-    "ogTitle": "Football Trivia",
-    "ogDescription": "Fast, fun football trivia. How high can you score?",
-    "ogImageUrl": "/football-hero-1200x630.png",
-    "noindex": false
+    "ogImageUrl": "https://imgur.com/jrVNIvH",
+    "heroImageUrl": "https://imgur.com/jrVNIvH",
+    "subtitle": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends.",
+    "description": "Fast, fun football trivia. How high can you score?",
+    "primaryCategory": "games"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjY3NDc5MiwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDYyRTdhOGRCYjhEODUzOGUxY0RiNUQ4OTMwMzBCYjE2ZUEwMEIyRjIifQ",
+    "payload": "eyJkb21haW4iOiJmYXJjYXN0ZXItZm9vdGJhbGwtdHJpdmlhLW1pbmktYXBwLnZlcmNlbC5hcHAifQ",
+    "signature": "XNyQBVl65N/JwcNjbZPh6GURRPETPDFK6oOt3yp7//0FOVHHcSRzRm6sY/VWEn/c1grnUP1+cU5LbcvEPL9BKBw="
   }
 }
-
-
