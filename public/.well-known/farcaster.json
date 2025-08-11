@@ -7,26 +7,20 @@
   "frame": {
     "version": "1",
     "name": "Football Trivia",
-    "homeUrl": "/farcaster",
-    "iconUrl": "/football-icon-1024x1024.png",
-    "splashImageUrl": "/splash-image-200x200.png",
+    "homeUrl": "https://farcaster-football-trivia-mini-app.vercel.app",
+    "iconUrl": "https://farcaster-football-trivia-mini-app.vercel.app/icon.png",
+    "splashImageUrl": "https://farcaster-football-trivia-mini-app.vercel.app/splash.png",
     "splashBackgroundColor": "#0B1320",
     "subtitle": "Test your football knowledge",
-    "description": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends.",
+    "description": "Quick-fire football questions across leagues, history, players, and records. Climb the leaderboard and challenge friends",
     "screenshotUrls": [
       "/screenshots/ft-home.png",
       "/screenshots/ft-question.png",
       "/screenshots/ft-results.png"
     ],
     "primaryCategory": "games",
-    "tags": ["football", "soccer", "trivia", "sports"],
-    "heroImageUrl": "/football-hero-1200x630.jpg",
-    "tagline": "Score points with every correct answer",
-    "ogTitle": "Football Trivia",
-    "ogDescription": "Fast, fun football trivia. How high can you score?",
-    "ogImageUrl": "/football-hero-1200x630.jpg",
-    "noindex": false
+    "webhookUrl": "https://farcaster-football-trivia-mini-app.vercel.app/api/webhook",
+    "imageUrl": "https://farcaster-football-trivia-mini-app.vercel.app/image.png"
   }
 }
-
 
