@@ -17,7 +17,7 @@ const miniapp = {
       type: "launch_miniapp" as const,
       url: `${appUrl}/farcaster`,
       name: "Football Trivia",
-      splashImageUrl: `${appUrl}/splash-football.gif`,
+      splashImageUrl: `${appUrl}/splash-image-200x200.png`,
       splashBackgroundColor: "#0B1320",
     },
   },
