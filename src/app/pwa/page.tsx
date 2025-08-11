@@ -15,6 +15,43 @@ type TriviaQuestion = {
   answerIndex: number;
 };
 
+type GameStats = {
+  gamesPlayed: number;
+  totalQuestions: number;
+  correctAnswers: number;
+  bestScore: number;
+  averageScore: number;
+};
+
+function getDefaultStats(): GameStats {
+  return {
+    gamesPlayed: 0,
+    totalQuestions: 0,
+    correctAnswers: 0,
+    bestScore: 0,
+    averageScore: 0,
+  };
+}
+
+function parseGameStats(raw: string): GameStats | null {
+  try {
+    const parsed = JSON.parse(raw) as Partial<Record<keyof GameStats, unknown>>;
+    const candidate: GameStats = {
+      gamesPlayed: typeof parsed.gamesPlayed === "number" ? parsed.gamesPlayed : 0,
+      totalQuestions:
+        typeof parsed.totalQuestions === "number" ? parsed.totalQuestions : 0,
+      correctAnswers:
+        typeof parsed.correctAnswers === "number" ? parsed.correctAnswers : 0,
+      bestScore: typeof parsed.bestScore === "number" ? parsed.bestScore : 0,
+      averageScore:
+        typeof parsed.averageScore === "number" ? parsed.averageScore : 0,
+    };
+    return candidate;
+  } catch {
+    return null;
+  }
+}
+
 const QUESTIONS: TriviaQuestion[] = [
   {
     question: "Which country won the 2022 FIFA World Cup?",
@@ -78,23 +115,22 @@ export default function HomePage() {
   }
 
   function saveGameStats() {
-    const existingStats = localStorage.getItem('football-trivia-stats');
-    const stats = existingStats ? JSON.parse(existingStats) : {
-      gamesPlayed: 0,
-      totalQuestions: 0,
-      correctAnswers: 0,
-      bestScore: 0,
-      averageScore: 0,
+    const existingStats = localStorage.getItem("football-trivia-stats");
+    let stats: GameStats = getDefaultStats();
+    if (existingStats) {
+      stats = parseGameStats(existingStats) ?? getDefaultStats();
+    }
+
+    stats = {
+      gamesPlayed: stats.gamesPlayed + 1,
+      totalQuestions: stats.totalQuestions + totalQuestions,
+      correctAnswers: stats.correctAnswers + score,
+      bestScore: Math.max(stats.bestScore, score),
+      averageScore:
+        (stats.correctAnswers + score) / (stats.totalQuestions + totalQuestions || 1),
     };
 
-    // Update stats
-    stats.gamesPlayed += 1;
-    stats.totalQuestions += totalQuestions;
-    stats.correctAnswers += score;
-    stats.bestScore = Math.max(stats.bestScore, score);
-    stats.averageScore = stats.correctAnswers / stats.totalQuestions;
-
-    localStorage.setItem('football-trivia-stats', JSON.stringify(stats));
+    localStorage.setItem("football-trivia-stats", JSON.stringify(stats));
   }
 
   function handleRestart() {

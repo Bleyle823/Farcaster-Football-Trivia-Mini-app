@@ -14,7 +14,7 @@ const pageInfo: Record<string, { title: string; emoji: string }> = {
 
 export function PwaTopNavbar() {
   const pathname = usePathname();
-  const currentPage = pageInfo[pathname] || { title: "Football Trivia", emoji: "⚽" };
+  const currentPage = pageInfo[pathname] ?? { title: "Football Trivia", emoji: "⚽" };
 
   return (
     <TopNavbarWrapper>

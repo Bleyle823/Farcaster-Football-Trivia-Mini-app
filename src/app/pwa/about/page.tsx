@@ -77,7 +77,7 @@ export default function AboutPage() {
           <CardContent>
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary">FIFA World Cup</Badge>
-              <Badge variant="secondary">Ballon d'Or Winners</Badge>
+              <Badge variant="secondary">Ballon d&apos;Or Winners</Badge>
               <Badge variant="secondary">UEFA Champions League</Badge>
               <Badge variant="secondary">Legendary Players</Badge>
               <Badge variant="secondary">Football History</Badge>

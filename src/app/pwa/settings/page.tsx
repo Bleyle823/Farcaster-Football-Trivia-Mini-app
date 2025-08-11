@@ -12,8 +12,35 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
 
+type AppSettings = {
+  darkMode: boolean;
+  soundEffects: boolean;
+  hapticFeedback: boolean;
+  autoAdvance: boolean;
+  showHints: boolean;
+};
+
+function parseSettings(raw: string): AppSettings | null {
+  try {
+    const parsed = JSON.parse(raw) as Partial<Record<keyof AppSettings, unknown>>;
+    const candidate: AppSettings = {
+      darkMode: typeof parsed.darkMode === "boolean" ? parsed.darkMode : false,
+      soundEffects:
+        typeof parsed.soundEffects === "boolean" ? parsed.soundEffects : true,
+      hapticFeedback:
+        typeof parsed.hapticFeedback === "boolean" ? parsed.hapticFeedback : true,
+      autoAdvance:
+        typeof parsed.autoAdvance === "boolean" ? parsed.autoAdvance : false,
+      showHints: typeof parsed.showHints === "boolean" ? parsed.showHints : true,
+    };
+    return candidate;
+  } catch {
+    return null;
+  }
+}
+
 export default function SettingsPage() {
-  const [settings, setSettings] = useState({
+  const [settings, setSettings] = useState<AppSettings>({
     darkMode: false,
     soundEffects: true,
     hapticFeedback: true,
@@ -25,7 +52,8 @@ export default function SettingsPage() {
   useEffect(() => {
     const savedSettings = localStorage.getItem('football-trivia-settings');
     if (savedSettings) {
-      setSettings(JSON.parse(savedSettings));
+      const parsed = parseSettings(savedSettings);
+      if (parsed) setSettings(parsed);
     }
     
     // Check system theme preference
@@ -40,17 +68,17 @@ export default function SettingsPage() {
     localStorage.setItem('football-trivia-settings', JSON.stringify(settings));
   }, [settings]);
 
-  const updateSetting = (key: string, value: boolean) => {
+  const updateSetting = (key: keyof AppSettings, value: boolean) => {
     setSettings(prev => ({ ...prev, [key]: value }));
   };
 
   const handleExportData = () => {
-    const stats = localStorage.getItem('football-trivia-stats');
-    const settingsData = localStorage.getItem('football-trivia-settings');
+    const statsRaw = localStorage.getItem('football-trivia-stats');
+    const settingsRaw = localStorage.getItem('football-trivia-settings');
     
     const exportData = {
-      stats: stats ? JSON.parse(stats) : null,
-      settings: settingsData ? JSON.parse(settingsData) : null,
+      stats: statsRaw ? JSON.parse(statsRaw) as unknown : null,
+      settings: settingsRaw ? JSON.parse(settingsRaw) as unknown : null,
       exportDate: new Date().toISOString(),
     };
 

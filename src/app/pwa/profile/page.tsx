@@ -12,8 +12,35 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useState, useEffect } from "react";
 
+type ProfileStats = {
+  gamesPlayed: number;
+  totalQuestions: number;
+  correctAnswers: number;
+  bestScore: number;
+  averageScore: number;
+};
+
+function parseProfileStats(raw: string): ProfileStats | null {
+  try {
+    const parsed = JSON.parse(raw) as Partial<Record<keyof ProfileStats, unknown>>;
+    const candidate: ProfileStats = {
+      gamesPlayed: typeof parsed.gamesPlayed === "number" ? parsed.gamesPlayed : 0,
+      totalQuestions:
+        typeof parsed.totalQuestions === "number" ? parsed.totalQuestions : 0,
+      correctAnswers:
+        typeof parsed.correctAnswers === "number" ? parsed.correctAnswers : 0,
+      bestScore: typeof parsed.bestScore === "number" ? parsed.bestScore : 0,
+      averageScore:
+        typeof parsed.averageScore === "number" ? parsed.averageScore : 0,
+    };
+    return candidate;
+  } catch {
+    return null;
+  }
+}
+
 export default function ProfilePage() {
-  const [stats, setStats] = useState({
+  const [stats, setStats] = useState<ProfileStats>({
     gamesPlayed: 0,
     totalQuestions: 0,
     correctAnswers: 0,
@@ -23,9 +50,10 @@ export default function ProfilePage() {
 
   // Load stats from localStorage on component mount
   useEffect(() => {
-    const savedStats = localStorage.getItem('football-trivia-stats');
+    const savedStats = localStorage.getItem("football-trivia-stats");
     if (savedStats) {
-      setStats(JSON.parse(savedStats));
+      const parsed = parseProfileStats(savedStats);
+      if (parsed) setStats(parsed);
     }
   }, []);
 
