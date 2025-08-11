@@ -6,19 +6,32 @@ import { type Metadata, type Viewport } from "next";
 
 const appUrl = getBaseUrl();
 
-const frame = {
-  version: "next",
-  imageUrl: `${appUrl}/embed.png`,
+// Mini App Embed metadata to make pages sharable in Farcaster feeds
+const miniapp = {
+  version: "1" as const,
+  imageUrl: `${appUrl}/og-football.png`,
   button: {
-    title: "Start",
+    title: "⚽ Start",
     action: {
-      type: "launch_frame",
+      type: "launch_miniapp" as const,
       url: `${appUrl}/farcaster`,
-      name: "Farcaster Mini App Example",
+      name: "Football Trivia",
+      splashImageUrl: `${appUrl}/splash-football.gif`,
+      splashBackgroundColor: "#0B1320",
     },
   },
 };
 
+// Backwards compatibility tag for older clients
+const frame = {
+  ...miniapp,
+  button: {
+    ...miniapp.button,
+    action: { ...miniapp.button.action, type: "launch_frame" as const },
+  },
+};
+
+const stringifiedMiniapp = JSON.stringify(miniapp);
 const stringifiedFrame = JSON.stringify(frame);
 
 export const viewport: Viewport = {
@@ -39,6 +52,9 @@ export const metadata: Metadata = {
   other: {
     "apple-mobile-web-app-capable": "yes",
     "mobile-web-app-capable": "yes",
+    // Primary embed tag for Mini Apps
+    "fc:miniapp": stringifiedMiniapp,
+    // Backwards compatibility for older Farcaster clients
     "fc:frame": stringifiedFrame,
   },
 };
@@ -58,3 +74,4 @@ export default function RootLayout({
     </html>
   );
 }
+
