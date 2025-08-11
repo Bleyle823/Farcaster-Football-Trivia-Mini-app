@@ -1,8 +1,7 @@
 "use client";
 
 import sdk, { type Context } from "@farcaster/frame-sdk";
-import React, { createContext, useContext, useState } from "react";
-import { useEffect } from "react";
+import React, { createContext, useContext, useLayoutEffect, useState } from "react";
 
 type FarcasterContextType =
   | {
@@ -17,8 +16,9 @@ export function FarcasterProvider({ children }: { children: React.ReactNode }) {
     Context.FrameContext | undefined
   >(undefined);
 
-  useEffect(() => {
-    sdk.actions
+  useLayoutEffect(() => {
+    // Call ready as early as possible to dismiss the splash screen
+    void sdk.actions
       .ready()
       .then(() =>
         sdk
