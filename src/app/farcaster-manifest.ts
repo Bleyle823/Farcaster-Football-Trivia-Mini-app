@@ -20,8 +20,7 @@ export const farcasterManifest: Manifest = {
     version: "1",
     name: "Football Trivia",
     homeUrl: `${appUrl}/farcaster`,
-    // Use an existing square icon for now; you can replace with a custom one later
-    iconUrl: `${appUrl}/icon-512x512.png`,
+    iconUrl: `${appUrl}/football-icon-512.png`,
     // Add this file in public/ if you want a splash animation
     splashImageUrl: `${appUrl}/splash-football.gif`,
     splashBackgroundColor: "#0B1320",
@@ -36,12 +35,12 @@ export const farcasterManifest: Manifest = {
     ],
     primaryCategory: "games",
     tags: ["football", "soccer", "trivia", "sports"],
-    heroImageUrl: `${appUrl}/hero-football.jpg`,
+    heroImageUrl: `${appUrl}/football-hero-1200x630.jpg`,
     tagline: "Score points with every correct answer",
     ogTitle: "Football Trivia",
     ogDescription:
       "Fast, fun football trivia. How high can you score?",
-    ogImageUrl: `${appUrl}/og-football.png`,
+    ogImageUrl: `${appUrl}/football-hero-1200x630.png`,
     noindex: false,
     // requiredChains: [],
     // requiredCapabilities: [
