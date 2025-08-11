@@ -54,7 +54,7 @@ export default function HomePage() {
   const [gameStarted, setGameStarted] = useState(false);
 
   const currentQuestion = useMemo(
-    () => QUESTIONS[currentQuestionIndex],
+    () => QUESTIONS[currentQuestionIndex]!,
     [currentQuestionIndex],
   );
 

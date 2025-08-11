@@ -53,7 +53,7 @@ export default function TriviaPage() {
   const [isCompleted, setIsCompleted] = useState(false);
 
   const currentQuestion = useMemo(
-    () => QUESTIONS[currentQuestionIndex],
+    () => QUESTIONS[currentQuestionIndex]!,
     [currentQuestionIndex],
   );
 
